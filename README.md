@@ -76,3 +76,26 @@ build_site.py + build_lab.py   deterministic HTML generators
 - Add a public contact email and CV if desired.
 - Inspect and validate all original historical figure permissions.
 - Revisit project claims as the research repositories evolve.
+
+
+## Version 3: mathematical explanations and interactive early research
+
+- Guided first-principles introductions on all four current research pages, with displayed LaTeX formula source.
+- Mathematical expressions pre-rendered as **inline accessible MathJax SVG at build time**, so the pages do not depend on a browser-downloaded renderer. The originating TeX is retained in `data-latex` attributes and in `build_editorial.py`.
+- Earlier research now appears prominently on the homepage, with interactive Hawkes inhibition and an animated, sourced *Grande Marche* 2016–17 historical case study.
+- Political visualization uses only aggregate published results; it distinguishes the original ESCP report, historical reporting and election outcomes and does not assert that analytics caused the election. See [source methodology](docs/historical-election-sources.md).
+
+### Rebuild all pages
+
+Install Node.js and Python 3 with BeautifulSoup, then run:
+
+```sh
+npm install
+python -m pip install beautifulsoup4
+python build_site.py
+python qa_site.py
+```
+
+`math_render.cjs` uses `mathjax-full` 3.2.2 (pinned in `package.json`) to pre-render all TeX, while `build_editorial.py` creates guided explanations and archival case-study pages. The deployment itself is static and needs no server-side runtime.
+
+Rebuilds require permission to publish only scientifically validated descriptions, and historical report downloads remain carefully distinguished from the original team PDFs pending review.

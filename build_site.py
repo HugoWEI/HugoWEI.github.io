@@ -94,3 +94,10 @@ print('Created pages:',len(list(root.rglob('*.html'))))
 
 from build_lab import build_lab
 build_lab(root, layout, eyebrow)
+
+# Post-process generated static pages for guided explanations and heritage interactives.
+from build_editorial import enhance
+enhance(root)
+# Static LaTeX rendering means mathematics is legible even with JavaScript disabled.
+from render_math import render
+render(root)
