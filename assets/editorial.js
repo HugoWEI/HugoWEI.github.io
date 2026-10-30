@@ -1,26 +1,26 @@
-/* Explanatory interactives: historical aggregate election facts and synthetic Hawkes model. */
+/* Historical research explanation and synthetic Hawkes-process visualization. */
 (() => {
 'use strict';
 const $ = id => document.getElementById(id);
 const NS = 'http://www.w3.org/2000/svg';
 const node=(name,attrs={},value)=>{const e=document.createElementNS(NS,name);Object.entries(attrs).forEach(([k,v])=>e.setAttribute(k,String(v)));if(value!==undefined)e.textContent=value;return e;};
 const steps=[
- ['APRIL 2016','A new movement','Emmanuel Macron launches En Marche. The subsequent “Grande Marche” is planned as a national listening exercise.','Carnegie; Le Temps'],
- ['MAY–SUMMER 2016','Target field locations','A campaign consultancy uses aggregate historical electoral and sociodemographic data to help organize neighborhood outreach.','Le Parisien (21 May 2016)'],
- ['SUMMER 2016','Listen at the door','Thousands of volunteers conduct conversations and collect questionnaires. The figures for discussions and completed forms should not be confused.','Le Monde (7 October 2016); Carnegie'],
- ['AUTUMN 2016','Analyze the responses','Interview text is processed with semantic analysis; the campaign presents a diagnosis of reported concerns.','Le Monde (7 October 2016); Carnegie'],
- ['2017 CAMPAIGN','Mobilize and communicate','Campaign teams combine volunteers, online engagement and field organizing. Analytical tools are only one component of the overall political campaign.','University of Grenoble academic analysis'],
- ['APRIL–MAY 2017','Votes, not a causal proof','Macron receives 24.01% of valid votes in the first round and 66.10% in the second. Those results alone cannot attribute his victory to data analytics.','French Ministry of the Interior']
+ ['SPRING 2016','Start with aggregate geography','LMP used previously available INSEE sociodemographic statistics and historical polling-station data to help plan where volunteer interviews would take place. No individual-level voter prediction is shown here.','Le Parisien · 21 May 2016'],
+ ['MAY 2016','Plan the field operation','A digital tool helped coordinate neighborhoods and canvassing assignments. The original reporting emphasizes the combination of data, software and volunteers.','Le Parisien · 21 May 2016'],
+ ['SUMMER 2016','Collect open-ended interviews','Door-to-door volunteers used mobile questionnaires to record conversations. Accounts distinguish roughly 25,000 completed questionnaires from a larger number of reported conversations.','Le Monde · 7 October 2016; Carnegie · 2018'],
+ ['AUTUMN 2016','Process unstructured language','Proxem analyzed about 1.5 million reported words using semantic-analysis software. The founder said deep-learning technology was used; model architecture and validation were not publicly established in these sources.','Le Monde Informatique · 2017; Le Monde · 2016'],
+ ['OCTOBER 2016','Summarize themes and context','Analysis was used in a public diagnosis of expressed concerns. Proxem’s founder described contrasting associations around nuclear energy depending on the surrounding context.','Le Monde Informatique · 2017; Carnegie · 2018'],
+ ['LOOKING BACK','Separate use from effectiveness','This documented workflow shows how data analytics helped organize, process and interpret campaign feedback. It is not evidence that AI caused the presidential election result.','Université Grenoble Alpes · 2018']
 ];
-const flow=$('campaign-flow');let current=0, timer=null;
+const flow=$('campaign-flow');let current=0,timer=null;
 if(flow){
- const labels=['MOVEMENT','GEOGRAPHY','CONVERSATION','TEXT ANALYSIS','ORGANIZATION','BALLOTS'];
+ const labels=['AGGREGATE DATA','FIELD PLAN','INTERVIEWS','TEXT ANALYSIS','DIAGNOSIS','EVIDENCE'];
  const draw=(index)=>{
   flow.replaceChildren();flow.setAttribute('viewBox','0 0 800 270');
   const boxes=labels.map((label,i)=>({x:21+i*130,y:93,w:115,h:78,label}));
   for(let i=0;i<boxes.length-1;i++){const a=boxes[i],b=boxes[i+1];flow.append(node('line',{x1:a.x+a.w,y1:132,x2:b.x,y2:132,stroke:'#496a80','stroke-width':2,'stroke-dasharray':'5 7'}));if(i===index-1){const circ=node('circle',{cx:a.x+a.w,cy:132,r:4,fill:'#e9ad7c'});flow.append(circ);if(!matchMedia('(prefers-reduced-motion: reduce)').matches){const animate=node('animate',{attributeName:'cx',from:a.x+a.w,to:b.x,dur:'1.5s',repeatCount:'indefinite'});circ.append(animate);}}}
   boxes.forEach((b,i)=>{const selected=i===index;flow.append(node('rect',{x:b.x,y:b.y,width:b.w,height:b.h,rx:6,fill:selected?'#23435a':'#142634',stroke:selected?'#9fd8ee':'#436074','stroke-width':selected?2.5:1}));flow.append(node('text',{x:b.x+b.w/2,y:121,'text-anchor':'middle',fill:selected?'#ecf6fc':'#a6b7c4','font-family':'DM Mono, monospace','font-size':9},b.label));flow.append(node('text',{x:b.x+b.w/2,y:150,'text-anchor':'middle',fill:selected?'#e6ad81':'#8199ac','font-family':'DM Mono, monospace','font-size':11},String(i+1).padStart(2,'0')));});
-  flow.append(node('text',{x:400,y:228,'text-anchor':'middle',fill:'#97b9cb','font-family':'DM Mono,monospace','font-size':12},'CONCEPTUAL INFORMATION FLOW · NOT VOTER DATA'));
+  flow.append(node('text',{x:400,y:228,'text-anchor':'middle',fill:'#97b9cb','font-family':'DM Mono,monospace','font-size':12},'SCHEMATIC HISTORICAL WORKFLOW · NOT ORIGINAL CAMPAIGN DATA'));
   const [date,title,body,source]=steps[index];$('case-step-number').textContent=`Step ${index+1} / ${steps.length}`;$('case-date').textContent=date;$('case-title').textContent=title;$('case-body').textContent=body;$('case-reference').textContent='Source: '+source;
  };
  const set=i=>{current=(i+steps.length)%steps.length;draw(current)};
@@ -30,12 +30,12 @@ if(flow){
  $('case-play').addEventListener('click',()=>{if(timer!==null){stop();return}if(matchMedia('(prefers-reduced-motion: reduce)').matches){set(current+1);return}$('case-play').textContent='Pause sequence Ⅱ';$('case-play').setAttribute('aria-pressed','true');timer=setInterval(()=>set(current+1),3200);});
  document.addEventListener('visibilitychange',()=>{if(document.hidden)stop()});draw(0);
 }
-const bars=$('election-bars');
-if(bars){const votes={one:[['Emmanuel Macron',24.01],['Marine Le Pen',21.30],['François Fillon',20.01],['Jean-Luc Mélenchon',19.58],['Benoît Hamon',6.36],['Other candidates',8.74]],two:[['Emmanuel Macron',66.10],['Marine Le Pen',33.90]]};
- const render=key=>{bars.replaceChildren();votes[key].forEach(([name,value])=>{const row=document.createElement('div');row.className='election-row';const title=document.createElement('span');title.className='election-name';title.textContent=name;const track=document.createElement('div');track.className='election-bar-track';const fill=document.createElement('div');fill.className='election-bar-fill';fill.style.width=value+'%';track.append(fill);const amount=document.createElement('span');amount.className='election-value';amount.textContent=value.toFixed(2)+'%';row.append(title,track,amount);bars.append(row);});for(const name of ['one','two']){$('round-'+name).classList.toggle('is-active',name===key);$('round-'+name).setAttribute('aria-pressed',String(name===key));}bars.setAttribute('aria-label',`Official ${key==='one'?'first':'second'}-round 2017 French presidential shares of valid votes cast.`)};
- $('round-one').addEventListener('click',()=>render('one'));
- $('round-two').addEventListener('click',()=>render('two'));
- render('one');
+const contextButtons={economy:$('context-economy'),environment:$('context-environment')};
+if(contextButtons.economy&&contextButtons.environment){
+ const contexts={economy:['More positive association reported','According to Proxem’s founder, mentions of nuclear energy framed in economic terms tended to have more favorable associations in the analyzed responses.'],environment:['More negative association reported','The same founder described less favorable associations for nuclear energy when discussed in an ecological context.']};
+ const show=key=>{for(const [name,button] of Object.entries(contextButtons)){button.classList.toggle('is-active',name===key);button.setAttribute('aria-pressed',String(name===key))}const [heading,body]=contexts[key];$('context-heading').textContent=heading;$('context-description').textContent=body};
+ Object.entries(contextButtons).forEach(([key,button])=>button.addEventListener('click',()=>show(key)));
+ show('economy');
 }
 const hawkes=$('hawkes-plot');
 if(hawkes){
