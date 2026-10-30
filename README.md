@@ -1,6 +1,6 @@
 # Hugo Wei — Research Portfolio
 
-A responsive, accessible, no-build static research website with ten pages, four active research articles, and two public editorial research synopses (PDF + LaTeX + original diagrams).
+A responsive, accessible, no-build static research website with eleven pages, a four-module interactive research lab, four active research articles, and two public editorial research synopses (PDF + LaTeX + original diagrams).
 
 ## Preview locally
 
@@ -12,7 +12,7 @@ python -m http.server 8000
 
 Visit `http://localhost:8000/`.
 
-No runtime dependencies or build step. Content and generated markup are held in `build_site.py`. Style and interactions live in `assets/styles.css` and `assets/app.js`. To regenerate pages after editing `build_site.py`:
+No runtime dependencies or build step. Content and generated markup are held in `build_site.py` and `build_lab.py`. Styling and interactions live in `assets/`, with a separate `lab.js` and `lab.css` to keep the scientific explorers independent. To regenerate pages:
 
 ```bash
 python build_site.py
@@ -29,6 +29,17 @@ python build_site.py
 All internal links are relative, so either repository naming pattern is supported without a separate build step.
 
 Cloudflare Pages is also supported: connect the repository, leave **build command** empty, and use `/` (repo root) for the static output. GitHub Pages is the simplest first deployment for this release.
+
+## Interactive research lab
+
+`research/lab.html` links four evidence-scoped displays directly to dated, reproducible source notebooks:
+
+1. **Magic (exact polynomial):** the plot is a browser evaluation of the degree-8 rational optimal branches in `quantum-magic-gate-bounds/notes/three_t_exact_branch_and_correlation_tube.md`. The interval is s in [-1/8, 1/4]. Novelty is not established.
+2. **Revivals (conditional numerical result):** the two time locations and enclosures come verbatim from `quantum-entanglement-revivals/research/phase-revivals/certificate/FINAL_RESULTS.json`. Bounds rely on ordinary floating-point inputs; this is not a machine-certified interval theorem.
+3. **SdS (thermodynamic baseline):** instant classical SdS horizon roots and `S_proxy(M) = S_b(M)+S_c(M)-S_b(M0)-S_c(M0)` are evaluated in JavaScript with G=1, Λ=3e−6. The crossing is only a proxy, not a QES or fine-grained Page transition. At M0=100 the baseline crossing mass is 83.0330759993.
+4. **Neural dynamics (negative control):** the four seeds and both error measurements come from `nonmarkovian-neural-dynamics/results/2026-10-29-seed-robustness.md`. The tested weighting made global population RMSE worse in all four seeds.
+
+For technical reproducibility, refer to each linked repository. The graphs are not live server-side simulations and are not presented as new discoveries.
 
 ## Public materials policy
 
@@ -47,14 +58,14 @@ Descriptions of active research are drawn from the four public GitHub repositori
 ```text
 index.html                main landing
 research/index.html       research project index
-research/*.html           individual research explanations
+research/*.html           individual explanations and interactive lab
 archive/index.html        curated archive
 archive/*.html            downloadable older-work synopses
 about/index.html          background
 papers/*/main.tex         editable research synopsis sources
 papers/*/*.pdf            compiled notes
 assets/                   CSS, JS, favicon
-build_site.py             deterministic HTML generator
+build_site.py + build_lab.py   deterministic HTML generators
 .github/workflows/        GitHub Pages deployment
 ```
 
