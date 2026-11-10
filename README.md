@@ -16,17 +16,9 @@ HTML uses `assets/styles.css` and `assets/compact.css`. GitHub Pages deploys the
 
 ## Full historical PDFs
 
-The GitHub API text-edit workflow cannot attach arbitrary local binary PDFs. The existing **revised public synopses** remain in the repository and are currently linked as fallbacks:
+The complete original reports are stored in the repository under `papers/hawkes/original-report.pdf` and `papers/big-data/original-report.pdf`. These are the original, unchanged PDF uploads provided by the author. The earlier edited public synopses remain as supplementary documents.
 
-- `papers/hawkes/hawkes-research-synopsis.pdf`
-- `papers/big-data/big-data-research-synopsis.pdf`
-
-To publish the original uploaded team reports, add the original files without alteration at:
-
-- `papers/hawkes/original-report.pdf`
-- `papers/big-data/original-report.pdf`
-
-The visible PDF buttons automatically switch to the originals after both paths independently become available; no HTML edit is required. Before publicly posting the 94-page Big Data original, check that all coauthors and identified interview participants agree to its dissemination. Historical estimates and statements should not be mistaken for contemporary findings.
+This is collaborative historical work: coauthors are credited on the website and the Big Data report contains named interview material and period-specific figures.
 
 Older Python build tools remain for version history but are **not** needed for this compact edition. Running `build_site.py` or the editorial generators can overwrite the new pages, so do not run them without reconciling their templates.
 
@@ -34,4 +26,11 @@ The detailed speculative physics articles, former interactive lab, and former ar
 
 ## November 2026 update
 
-The Research navigation item now opens a three-entry catalogue (current physics questions; previous Hawkes and Big Data work). The two full original historical PDF reports are presently hosted in the owner's Google Drive, and the public site links to these original report URLs instead of the editorial synopses. The Drive file owner must explicitly enable **Anyone with the link → Viewer** for both before anonymous website visitors can view them. The former on-repo synopsis files are retained only as archive history and are no longer linked from the research pages.
+The Research navigation item opens a three-entry catalogue (current physics questions; previous Hawkes and Big Data work). The **complete original report PDFs** are now committed to this GitHub repository, with unchanged bytes from the user-provided original reports:
+
+- `papers/hawkes/original-report.pdf` — 25 pages, CentraleSupélec group report (2024)
+- `papers/big-data/original-report.pdf` — 94 pages, ESCP group report
+
+Both the Research catalogue cards and the dedicated report-page PDF buttons link to these local originals on GitHub Pages. The shorter edited synopses remain in the repository as supplementary historical files but are not linked from the active research pages.
+
+**Document context:** The Big Data report contains historical projections and named interviews; readers should interpret its statements in the context of its original research period.
