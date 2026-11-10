@@ -31,3 +31,7 @@ The visible PDF buttons automatically switch to the originals after both paths i
 Older Python build tools remain for version history but are **not** needed for this compact edition. Running `build_site.py` or the editorial generators can overwrite the new pages, so do not run them without reconciling their templates.
 
 The detailed speculative physics articles, former interactive lab, and former archival visual explorations have been removed from GitHub Pages. Their commit history remains available.
+
+## November 2026 update
+
+The Research navigation item now opens a three-entry catalogue (current physics questions; previous Hawkes and Big Data work). The two full original historical PDF reports are presently hosted in the owner's Google Drive, and the public site links to these original report URLs instead of the editorial synopses. The Drive file owner must explicitly enable **Anyone with the link → Viewer** for both before anonymous website visitors can view them. The former on-repo synopsis files are retained only as archive history and are no longer linked from the research pages.

@@ -45,3 +45,34 @@
 .research-topic-link span:last-child{font:11px var(--mono);color:var(--blue);white-space:nowrap}
 .profile-links{display:flex;gap:12px;flex-wrap:wrap;margin-top:23px}
 @media(max-width:780px){.compact-hero-grid{min-height:auto;padding:43px 0 15px}.research-topic-link{align-items:start;flex-direction:column;gap:14px;padding:23px}}
+
+/* Research catalogue — a clear, full-width clickable index */
+.catalogue-hero{padding-bottom:70px}
+.catalogue-hero h1{font-size:clamp(72px,8vw,112px);margin:56px 0 18px;line-height:1}
+.catalogue-hero>div>p{max-width:770px}
+.catalogue-section{padding:72px 0 108px}
+.catalogue-heading{display:flex;align-items:end;justify-content:space-between;gap:30px;margin-bottom:26px}
+.catalogue-heading h2{font-size:clamp(35px,4.2vw,56px);line-height:1.2;letter-spacing:-.05em;font-weight:500;margin:12px 0 0}
+.catalogue-heading h2 em{font-family:var(--serif);color:var(--copper);font-weight:400}
+.catalogue-count{font:10px var(--mono);color:var(--muted);white-space:nowrap;padding-bottom:8px}
+.catalogue-grid{display:grid;gap:14px}
+.catalogue-entry{border:1px solid var(--rule);background:linear-gradient(120deg,#111c29,#0e1722);transition:border-color .2s,transform .2s}
+.catalogue-entry:hover{border-color:var(--blue);transform:translateY(-2px)}
+.catalogue-entry-current{background:linear-gradient(110deg,#172738,#101822)}
+.catalogue-main{display:block;padding:24px 29px 26px}
+.catalogue-main:focus-visible{outline-offset:-5px}
+.catalogue-meta{display:flex;align-items:center;gap:17px;border-bottom:1px solid var(--rule);padding-bottom:16px;color:var(--muted);font:10px var(--mono);letter-spacing:.08em}
+.catalogue-number{font:15px var(--mono);color:var(--copper)}
+.catalogue-type{color:var(--blue)}
+.catalogue-year{margin-left:auto}
+.catalogue-content{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:24px 0 6px}
+.catalogue-category{font:10px var(--mono);letter-spacing:.09em;color:var(--subtle)}
+.catalogue-content h3{font-size:clamp(26px,3vw,43px);line-height:1.16;font-weight:500;letter-spacing:-.045em;margin:11px 0 12px}
+.catalogue-content p{color:var(--muted);font-size:13px;line-height:1.7;margin:0;max-width:780px}
+.catalogue-arrow{color:var(--blue);font-size:37px;line-height:1;align-self:center;transition:transform .2s}
+.catalogue-entry:hover .catalogue-arrow{transform:translate(4px,-4px)}
+.catalogue-actions{display:flex;flex-wrap:wrap;gap:28px;padding:14px 29px 21px;border-top:1px solid var(--rule)}
+.catalogue-actions a{font:11px var(--mono);color:var(--blue)}
+.catalogue-actions a+ a{color:var(--muted)}
+.catalogue-actions a:hover{text-decoration:underline}
+@media(max-width:780px){.catalogue-hero h1{font-size:clamp(58px,13vw,83px)}.catalogue-section{padding:52px 0 76px}.catalogue-main{padding:18px 18px 24px}.catalogue-meta{gap:11px;letter-spacing:0}.catalogue-content{padding:20px 0 0;gap:11px}.catalogue-content h3{font-size:clamp(25px,6.7vw,37px)}.catalogue-content p{font-size:12px}.catalogue-arrow{font-size:26px}.catalogue-actions{gap:15px;padding:14px 18px 20px}.catalogue-actions a{font-size:10px}}
