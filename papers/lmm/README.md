@@ -1,8 +1,8 @@
 # LIBOR Market Model — calibration & extensions
 
-This directory is intended to host two publicly approved PDF documents for the 2026 project:
+Publicly linked research documents for Hugo Wei's 2026 work, presented in the site's Research catalogue:
 
-- `presentation.pdf` — Extension to the LIBOR Market Model: Calibration to CMS Spread Options & Market Skew Modelling (54 pages)
-- `thesis.pdf` — Calibration of the LIBOR Market Model (79 pages)
+- [Presentation](presentation.pdf) — *Extension to the LIBOR Market Model (LMM): Calibration to CMS Spread Options & Market Skew Modelling* (54 pages)
+- [Thesis](thesis.pdf) — *Calibration of the LIBOR Market Model* (79 pages)
 
-The research catalogue links to these filenames. Upload the approved PDF files under these exact names so both links resolve.
+Both PDFs were uploaded to this repository in November 2026. The author is responsible for confirming institutional and employer permissions for continued public distribution.
