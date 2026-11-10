@@ -27,7 +27,7 @@ The detailed speculative physics articles, former interactive lab, and former ar
 
 ## November 2026 update
 
-The Research navigation item opens a three-entry catalogue (current physics questions; previous Hawkes and Big Data work). The **complete original report PDFs** are now committed to this GitHub repository, with unchanged bytes from the user-provided original reports:
+The Research navigation item opens a four-entry catalogue (physics topics; LIBOR Market Model calibration; Hawkes; Big Data). The **complete original report PDFs** are now committed to this GitHub repository, with unchanged bytes from the user-provided original reports:
 
 - `papers/hawkes/original-report.pdf` — 25 pages, CentraleSupélec group report (2024)
 - `papers/big-data/original-report.pdf` — 94 pages, ESCP group report
@@ -41,4 +41,4 @@ Both the Research catalogue cards and the dedicated report-page PDF buttons link
 - The main navigation now includes **Tools** immediately after **Research** on all active pages.
 - The Tools catalogue features **Polymarket LOB lab**, marked **WIP DEMO**, linked to [the live demo](https://hugowei.github.io/polymarket-lob/) and [the source repository](https://github.com/HugoWEI/polymarket-lob).
 - The Research catalogue includes **LIBOR Market Model: calibration & extensions** as the second entry, below the Physics topics and above Hawkes and Big Data.
-- The LMM card has separate links to `papers/lmm/presentation.pdf` (54 pages) and `papers/lmm/thesis.pdf` (79 pages). **These PDF links will not resolve until the two files have been uploaded** to those exact paths. A placeholder README exists in `papers/lmm/`. Review institutional and employer publication requirements before making the PDFs public.
+- The LMM card has separate links to `papers/lmm/presentation.pdf` (54 pages) and `papers/lmm/thesis.pdf` (79 pages). **Both original PDF documents were uploaded to GitHub** and are accessible through the Research catalogue links. Before wider distribution, ensure publication complies with institutional and employer disclosure requirements.
