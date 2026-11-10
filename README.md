@@ -4,10 +4,11 @@ This is the hand-edited static site at https://hugowei.github.io/.
 
 ## Navigation
 
-- `index.html`: concise landing page
+- `index.html`: concise landing page with links to Research and About
 - `archive/hawkes.html`: 2024 team work on multivariate Hawkes processes with inhibition
 - `archive/big-data.html`: ESCP team work on Big Data and sustainability
-- `research/index.html`: one-page physics teaser, without speculative project/paper claims
+- `research/index.html`: research overview with current interests and previous collaborative reports
+- `research/physics.html`: short physics topics page
 - `about/index.html`: brief background
 - `archive/index.html`: compatibility index for older archive links
 
