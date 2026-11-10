@@ -1,0 +1,35 @@
+/* Compact portfolio edition — 2026. Works with the retained base design system. */
+.compact-hero{padding:40px 0 76px;border-bottom:1px solid var(--rule);background:radial-gradient(ellipse 58% 95% at 92% 5%,rgba(48,100,136,.17),transparent 80%)}
+.compact-hero>.container>.eyebrow{border-bottom:1px solid var(--rule);padding:0 0 23px}
+.compact-hero-grid{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(270px,.55fr);gap:7%;align-items:center;padding:90px 0 30px}
+.compact-hero-grid h1{font-size:clamp(53px,5.5vw,88px);line-height:1.06;letter-spacing:-.07em;font-weight:500;margin:0 0 27px}
+.compact-hero-grid h1 em{font-family:var(--serif);font-weight:400;color:var(--copper);letter-spacing:-.04em}
+.compact-hero-grid .hero-description{font-size:15px;max-width:620px}
+.compact-hero-aside{align-self:stretch;min-height:355px;border:1px solid var(--rule);background:linear-gradient(145deg,#142536,#101822);position:relative;display:flex;flex-direction:column;justify-content:center;align-items:center;overflow:hidden}
+.compact-hero-aside::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(158,212,238,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(158,212,238,.04) 1px,transparent 1px);background-size:34px 34px}
+.aside-label,.aside-bottom{position:absolute;left:20px;right:20px;color:var(--subtle);font:9px var(--mono);letter-spacing:.12em}.aside-label{top:22px}.aside-bottom{bottom:22px}
+.aside-mark{position:relative;font:110px/1 var(--serif);color:var(--blue);white-space:nowrap;opacity:.85}.aside-mark span{font:24px var(--serif);font-style:italic;color:var(--copper)}
+.compact-hero-aside p{position:relative;font:11px/1.8 var(--mono);text-align:center;color:var(--muted);margin:15px 0 0}
+.compact-section{padding-top:84px;padding-bottom:95px}.compact-section .section-heading{margin-bottom:30px}
+.compact-preview{background:var(--surface);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:66px 0}
+.preview-row{display:flex;align-items:center;justify-content:space-between;gap:40px}.preview-row h2{font-size:clamp(38px,4vw,56px);margin:14px 0;font-weight:500;letter-spacing:-.045em}.preview-row h2 em{font-family:var(--serif);color:var(--copper);font-weight:400}
+.preview-row p{max-width:730px;font-size:14px;color:var(--muted);line-height:1.8}.preview-row .text-link{flex-shrink:0}
+.compact-pagehero{padding-bottom:70px}.compact-pagehero h1{font-size:clamp(57px,7vw,106px);margin:20px 0 21px}.compact-pagehero .overline{font:10px var(--mono);color:var(--blue);letter-spacing:.12em;margin:50px 0 0}
+.detail-layout{display:grid;grid-template-columns:minmax(0,1.43fr) minmax(290px,.7fr);gap:9%;align-items:start}
+.detail-main h2{font-size:clamp(33px,3.4vw,48px);font-weight:500;letter-spacing:-.05em;line-height:1.16;margin:22px 0 30px}
+.detail-main h2 em{font-family:var(--serif);color:var(--copper);font-weight:400}
+.detail-main>p{font-size:16px;line-height:1.9;color:var(--muted);margin:0 0 23px}.detail-main>p strong{color:var(--ink);font-weight:600}
+.tagline{border-top:1px solid var(--rule);padding-top:26px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;font:9px var(--mono);color:var(--copper);margin-top:43px}
+.tagline span{color:var(--muted);font:10px var(--mono);border:1px solid var(--rule);padding:7px 9px}
+.detail-aside{display:grid;gap:17px}.pdf-panel,.credit-panel,.report-figure{border:1px solid var(--rule);padding:28px;background:var(--surface);margin:0}
+.pdf-panel h3{font-size:30px;letter-spacing:-.04em;font-weight:500;margin:13px 0 5px}.pdf-panel>p{font-size:13px;line-height:1.75;color:var(--muted);margin:0 0 23px}
+.pdf-panel .pdf-action{display:flex}.pdf-status{display:block;color:var(--subtle);font:10px/1.6 var(--mono);margin-top:16px}
+.credit-panel p{color:var(--ink);font-size:14px;line-height:1.9;margin:15px 0 9px}.credit-panel small{font-size:11px;line-height:1.7;color:var(--muted)}
+.report-figure{background:#e6ebef;padding:12px}.report-figure img{width:100%;height:auto;max-height:270px;object-fit:contain}
+.report-figure figcaption{margin-top:9px;color:#42556a;font:10px var(--mono)}
+.teaser-wrap{max-width:960px}.teaser-item{border-top:1px solid var(--rule);padding:27px 0;display:grid;grid-template-columns:55px 1fr;gap:22px}
+.teaser-item:first-of-type{margin-top:26px}.teaser-item>span{font:11px var(--mono);color:var(--copper);padding-top:7px}.teaser-item h2{font-size:clamp(23px,2.8vw,34px);letter-spacing:-.04em;font-weight:500;margin:0 0 10px}
+.teaser-item p{font-size:14px;line-height:1.8;color:var(--muted);margin:0}.teaser-disclaimer{max-width:750px;border-top:1px solid var(--rule);padding:25px 0;margin:3px 0 28px;color:var(--subtle);font-size:12px;line-height:1.8}
+@media(max-width:940px){.compact-hero-grid,.detail-layout{grid-template-columns:1fr;gap:45px}.compact-hero-grid{padding:50px 0 0}.compact-hero-aside{min-height:235px}.aside-mark{font-size:78px}.detail-aside{grid-template-columns:1fr 1fr}.pdf-panel{grid-column:1/-1}.report-figure img{max-height:220px}}
+@media(max-width:780px){.compact-hero{padding-top:27px}.compact-section{padding:64px 0}.compact-hero-grid h1{font-size:clamp(46px,9vw,72px)}.preview-row{flex-direction:column;align-items:flex-start}.compact-pagehero h1{font-size:clamp(47px,9vw,76px)}.detail-aside{grid-template-columns:1fr}.pdf-panel{grid-column:auto}}
+@media(max-width:540px){.compact-hero-grid h1{font-size:clamp(43px,10vw,62px)}.compact-hero-aside{min-height:200px}.detail-main>p{font-size:14px}.pdf-panel,.credit-panel{padding:21px}.teaser-item{grid-template-columns:35px 1fr;gap:10px}}
